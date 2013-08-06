@@ -13,6 +13,7 @@
   if(isset($_POST['ErmoPerf']) && $_POST['ErmoPerf'] == 'Yes') {
     $y = 'Y';
     array_push($_POST['release'], 'ERMO Perf');
+    array_push($_POST['release'], 'FastTrack');
   }else
     $y ='N';
   //  

@@ -194,10 +194,21 @@
     //$query_for_perf_bugs = $query.$release.$perf.$ERMOfilteronly.$domainQA.$orderby; //actual query for ERMO Only throws in a different filet
     $query_for_app_bugs  = $query.$release.$perf.$ERMOfilteronly.$domainRQ.$orderby;
     }
-    /*elseif($release =="FY13-Q3"){
-      $query_for_app_bugs  = $query.$release.$app.$domainRQ.$orderby; // actuall query for other releases
-      $query_for_perf_bugs  = $query.$release.$perf.$domainRQ.$orderby; //actual query
-    }*/
+    elseif ($release == 'FastTrack') {
+        $queryForFastrack = "select distinct defect_id as \"Issue ID\", release as \"Release\",gbp as \"Bussiness Flow\",project as \"Project\",severity  as \"Severity\" ,
+              status as \"Status\",null as \"PM Priority\",ROUND (SYSDATE - detected_date) as \"Age\",a.assigned_to as \"Assigned To\",logged_by as \"Reported By\",
+              detected_date as \"Reported Date\",
+              modified_date as \"Modified\", impacted_hours as\"Application Name\",  environment as \"Environment\",track as \"Track\",
+              summary as \"Summary\"  from gdcp.cisco_11i_ermo_db a, gdcp.perf_assignments b
+              where  status <> '12 Closed' ";
+        $perfForFastrack = " and a.assigned_to = b.assigned_to";
+        $appForFasttrack = " and  a.assigned_to not in(select distinct c.assigned_to from gdcp.cisco_11i_ermo_db c, gdcp.perf_Assignments p  where c.assigned_to = p.assigned_to) "; // condition for getting all application bugs
+        $onlyFasttrack = " and impacted_hours = 'NPA'";
+       
+       $query_for_app_bugs  = $queryForFastrack.$appForFastrack.$onlyFasttrack.$domainRQ.$orderby;
+       $query_for_perf_bugs = $queryForFastrack.$perfForFastrack.$onlyFasttrack.$domainRQ.$orderby;
+    }
+    
     else{
       $query_for_app_bugs  = $query.$release.$app.$domainRQ.$orderby; // actuall query for other releases
       $query_for_perf_bugs = $query.$release.$perf.$domainRQ.$orderby; //actual query
@@ -266,7 +277,8 @@
     if($release == 'ERMO Perf'){
       $body .= "<b style = \"font-family:Calibri;font-size:16px;\"> Assigned to  Performance Team &nbsp;: ".$release." - Domain ERMO RQ </b>  <br/><br/>";
     }
-    elseif($release == 'Q4FY13'){
+
+    elseif($release == 'Q1FY14'){
       $body .= "<b style = \"font-family:Calibri;font-size:16px;\"> Assigned to  Application Team &nbsp; ".$release." : </b>  <br/><br/>";
       $body .= "<u style =\"font-family:Calibri;font-size:14px;color:red\">Note : The status needs to be changed for the cases highlighted in yellow</u><br/><br/>";
     }

@@ -30,9 +30,9 @@
                 		?>
             		    </select>
             		  </label>&nbsp;&nbsp;&nbsp; <br/>
-            		   <label>Ermo Perf<input type="checkbox" id="ErmoPerf" name ="ErmoPerf" value ="Yes"></label><br/><br/><br/>
+            		   <label>Ermo Perf and FastTrack<input type="checkbox" id="ErmoPerf" name ="ErmoPerf" value ="Yes"></label><br/><br/><br/>
                         <label>Graph
-                        <select id ="domain"  name = "graph[]" required multiple style ="height:100px">
+                        <select id ="domain"  name = "graph[]"  multiple style ="height:100px">
                         <?php
                             //$conn;
                             //include('functions.php');
@@ -47,7 +47,7 @@
                         </select>
                       </label>&nbsp;&nbsp;&nbsp; <br/>
                         <a  id = "addlink"href="meta.php">Add New Releases </a><br/>
-            		  <label><button id="screen">Screen</button></label>
+            		  <label><button id="screen" disabled>Screen</button></label>
 
             		  <label><button id="send"> Email </button>  </label>
 
