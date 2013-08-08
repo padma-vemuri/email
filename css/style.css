@@ -19,6 +19,11 @@ button#screen { float:left; margin-right: 20px; text-align: right;font:  13px/13
 #Email{ -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px;font:  15px/18px 'OpenSansLight', Arial, sans-serif;letter-spacing: 0; padding:5px;  color:black; border:solid 1px #ccc; margin:0 0 20px; width:220px;}
 #password{ -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px;font:  15px/18px 'OpenSansLight', Arial, sans-serif;letter-spacing: 0; padding:5px;  color:black; border:solid 1px #ccc; margin:0 0 20px; width:220px;}
 #domain{ -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px;font:  15px/15px 'OpenSansLight', Arial, sans-serif;letter-spacing: 0; padding:5px;  color:black; border:solid 1px #ccc; margin:0 0 20px; width:220px;}
+#graph{ -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px;font:  15px/15px 'OpenSansLight', Arial, sans-serif;letter-spacing: 0; padding:5px;  color:black; border:solid 1px #ccc; margin:0 0 20px; width:220px;}
+
+#domainduplicate{ -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px;font:  15px/15px 'OpenSansLight', Arial, sans-serif;letter-spacing: 0;position: absolute; top: 220px; padding:5px;  color:black; border:solid 1px #ccc; margin:0 0 20px; width:220px;}
+#graphduplicate{ -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px;font:  15px/15px 'OpenSansLight', Arial, sans-serif;letter-spacing: 0;position: absolute; top: 400px; padding:5px;  color:black; border:solid 1px #ccc; margin:0 0 20px; width:220px;}
+
 #to{ -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px;font:  15px/18px 'OpenSansLight', Arial, sans-serif;letter-spacing: 0; padding:5px;  color:black; border:solid 1px #ccc; margin:0 0 20px; width:220px;}
 #releasename{ -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px;font:  15px/18px 'OpenSansLight', Arial, sans-serif;letter-spacing: 0; padding:5px;  color:black; border:solid 1px #ccc; margin:0 0 20px; width:220px;}
 
@@ -26,3 +31,5 @@ h1{font:  32px/38px 'OpenSansRegular', Arial, sans-serif;letter-spacing: 0;}
 a#addlink{font:  12px/11px 'OpenSansRegular', Arial, sans-serif;letter-spacing: 0; color:black; float: left;text-decoration: none; }
 h3{font:  17px/18px 'OpenSansRegular', Arial, sans-serif;letter-spacing: 0; color:red;}
 input.btn { margin-right: 20px; text-align: left;font:  14px/18px 'OpenSansLight', Arial, sans-serif;letter-spacing: 0; margin-right:2px;  border:solid 1px #ccc; padding:5px 10px;  margin:0 0 20px; text-transform:uppercase;color:#333;cursor:pointer;}
+.info {font:  10px/10px 'OpenSansRegular', Arial, sans-serif;letter-spacing: 0;position:absolute; top:200px; color:yellow;}
+.infograph {font:  10px/10px 'OpenSansRegular', Arial, sans-serif;letter-spacing: 0;position:absolute; top:380px; color:yellow;}
