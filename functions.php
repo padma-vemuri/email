@@ -203,7 +203,7 @@
               where  status <> '12 Closed' ";
         $perfForFastrack = " and a.assigned_to = b.assigned_to";
         $appForFasttrack = " and  a.assigned_to not in(select distinct c.assigned_to from gdcp.cisco_11i_ermo_db c, gdcp.perf_Assignments p  where c.assigned_to = p.assigned_to) "; // condition for getting all application bugs
-        $onlyFasttrack = " and impacted_hours = 'NPA'";
+        $onlyFasttrack = " and impacted_hours = 'NPA' and release <>'ERMO Perf' ";
        
        $query_for_app_bugs  = $queryForFastrack.$appForFastrack.$onlyFasttrack.$domainRQ.$orderby;
        $query_for_perf_bugs = $queryForFastrack.$perfForFastrack.$onlyFasttrack.$domainRQ.$orderby;
